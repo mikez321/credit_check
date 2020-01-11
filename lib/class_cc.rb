@@ -26,8 +26,7 @@ class CreditCard
   end
 
   def last_four
-    last_four = card_number.split("").collect { |n| n.to_i}
-    last_four[-4..-1].join""
+    @card_ary[-4..-1].join""
   end
 
 end
