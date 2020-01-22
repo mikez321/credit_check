@@ -10,23 +10,27 @@ class BankTest < Minitest::Test
   end
 
   def test_it_has_a_name
+    skip
     bank = Bank.new("Wells Fargo")
     assert_equal "Wells Fargo", bank.name
   end
 
   def test_it_knows_a_transaction_is_invalid_when_credit_card_is_invalid
+    skip
     bank = Bank.new("Wells Fargo")
     credit_card = CreditCard.new("4024007106512380", 15000)
     assert_equal false, bank.valid_transaction?(100, credit_card)
   end
 
   def test_it_knows_a_transactions_is_invalid_when_the_amount_is_over_the_limit
+    skip
     bank = Bank.new("Wells Fargo")
     credit_card = CreditCard.new("5541808923795240", 15000)
     assert_equal false, bank.valid_transaction?(20000, credit_card)
   end
 
   def test_it_knows_when_a_transaction_is_valid
+    skip
     bank = Bank.new("Wells Fargo")
     credit_card = CreditCard.new("5541808923795240", 15000)
     assert_equal true, bank.valid_transaction?(11000, credit_card)
